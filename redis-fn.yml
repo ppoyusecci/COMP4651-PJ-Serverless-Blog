@@ -1,0 +1,11 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://ab5063a16176f11eabff4029ca20877e-448241663.us-east-2.elb.amazonaws.com:8080
+functions:
+  redis-fn:
+    lang: node
+    handler: ./redis-fn
+    image: cyaaronk/redis-fn:0.40
+    environment:
+      redis: openfaas-redis-master

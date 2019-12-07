@@ -3,19 +3,6 @@ provider:
   name: openfaas
   gateway: http://ab5063a16176f11eabff4029ca20877e-448241663.us-east-2.elb.amazonaws.com:8080
 functions:
-  show-html:
-    lang: python3
-    handler: ./show-html
-    image: cyaaronk/show-html:0.12
-    environment:
-      content_type: text/html
-      gateway_hostname: gateway.openfaas
-  redis-fn:
-    lang: node
-    handler: ./redis-fn
-    image: cyaaronk/redis-fn:0.28
-    environment:
-      redis: openfaas-redis-master
   insert-post:
     lang: node8-express
     handler: ./insert-post
