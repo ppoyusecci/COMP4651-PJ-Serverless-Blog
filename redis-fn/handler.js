@@ -3,14 +3,14 @@
 const redis = require("redis");
 const fs = require('fs');
 
-var pageCache = ["insertpost", "new", "list"];
+var pageCache = ["insertpost", "new", "list", "getpost"];
 
 module.exports = (body, callback) => {
   const client = redis.createClient(6379, process.env.redis);
   if (body == "flush") {
     var len = pageCache.length;
     for (var i = 0; i < len; i++) {
-      client.del("insertpost", (err, reply) => {});
+      client.del(pageCache[i], (err, reply) => {});
     }
     client.quit();
     pageCache = [];

@@ -14,7 +14,7 @@
     </style>
 </head>
 <body>
-  <h2>Insert shit</h2>
+  <h2>Insert Post</h2>
   <p>
     Text: <input type="text" name="text" id="text"> 
     <button id="insert">Insert</button>
@@ -29,8 +29,9 @@
         // Execute ajax request
         $.ajax({
           url:'./insert-post',
-          type:'POST',
-          data:$('#text').val()
+          type:'GET',
+          data:$('#text').val(),
+          contentType: "text/plain"
         })
         .done(function(data) {
           // ajax success

@@ -1,0 +1,16 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://ab5063a16176f11eabff4029ca20877e-448241663.us-east-2.elb.amazonaws.com:8080
+functions:
+  get-post:
+    lang: node8-express
+    handler: ./get-post
+    image: cyaaronk/get-post:0.1
+    environment:
+      write_timeout: 10s
+      read_timeout: 10s
+      mongo: openfaas-db-mongodb.openfaas-fn.svc.cluster.local
+    secrets:
+      - mongodb-client-pwd
+

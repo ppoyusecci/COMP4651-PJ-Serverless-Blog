@@ -6,6 +6,6 @@ functions:
   redis-fn:
     lang: node
     handler: ./redis-fn
-    image: cyaaronk/redis-fn:0.40
+    image: cyaaronk/redis-fn:0.49
     environment:
       redis: openfaas-redis-master

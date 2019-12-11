@@ -14,10 +14,10 @@
     </style>
 </head>
 <body>
-  <h2>Insert shit</h2>
+  <h2>Get Post</h2>
   <p>
     Text: <input type="text" name="text" id="text"> 
-    <button id="insert">Insert</button>
+    <button id="get">Get</button>
   </p>
   
   <textarea class="result" cols="80" rows="10"></textarea>
@@ -25,10 +25,10 @@
   <script type="text/javascript">
     $(function(){
       // Insert button click
-      $('#insert').on('click', function() {
+      $('#get').on('click', function() {
         // Execute ajax request
         $.ajax({
-          url:'./insert-post',
+          url:'./get-post',
           type:'POST',
           data:$('#text').val()
         })
